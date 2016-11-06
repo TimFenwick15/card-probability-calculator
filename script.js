@@ -2,8 +2,8 @@ function calculate (x) {
   if (!x.numberOfCards || ! x.cardsToDraw)
     return 'Complete the form :('
  
-  x.deckSize -= ~~x.upstart
-  x.cardsToDraw += ~~x.goingSecond
+  x.deckSize -= Number(x.upstart)
+  x.cardsToDraw += Number(x.goingSecond)
 
   let sumP = 0
   for (let i = 0; i < x.cardsToDraw; i++) {
@@ -29,8 +29,6 @@ function calculate (x) {
       deckSize: Number(document.getElementById('deck').value)
     }
 
-    //const text = document.getElementById('yugioh')
-    //text.textContent = calculate(params)
     document.getElementById('yugioh').textContent = calculate(params)
   })
 })()
