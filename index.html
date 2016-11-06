@@ -1,5 +1,28 @@
 <html>
+<head>
+  <title>YuGiOh</title>
+  <link rel='stylesheet' href='style.css' />
+</head>
 <body>
-Hello world!
+<p>Deck Size : <input id='deck' value='' type='number' /></p>
+<p>Number of Cards Played : <input id='played' value='' type='number' /></p>
+<p>Going Second? : 
+  <select id='second'>
+    <option value=''>Select</option>
+    <option value='yes'>Yes</option>
+    <option value='no'>No</option>
+  </select>
+</p>
+<p>Playing Upstart? : 
+  <select id='upstart'>
+    <option value=''>Select</option>
+    <option value='yes'>Yes</option>
+    <option value='no'>No</option>
+  </select>
+</p>
+
+<button id='calc'>Calculate...</button>
+<div id='yugioh'></div>
+<script src='script.js'></script>
 </body>
 </html>
