@@ -1,18 +1,19 @@
 function calculate (x) {
-  if (!x.numberOfCards || ! x.cardsToDraw)
+  if (!x.deckSize || !x.targetsPlayed || !x.cardsDrawn)
     return 'Complete the form :('
+  if (x.targetsPlayed > x.deckSize || x.cardsDrawn > x.deckSize)
+    return 'Logical fallacy detected. Git gud'
  
   x.deckSize -= Number(x.upstart)
-  x.cardsToDraw += Number(x.goingSecond)
 
   let sumP = 0
-  for (let i = 0; i < x.cardsToDraw; i++) {
+  for (let i = 0; i < x.cardsDrawn; i++) {
     let multipleP = 1
     for (let j = 0; j < i; j++) {
-      multipleP *= (x.deckSize - x.numberOfCards) / x.deckSize
+      multipleP *= (x.deckSize - x.targetsPlayed) / x.deckSize
       x.deckSize--
     }
-    multipleP *= x.numberOfCards / x.deckSize
+    multipleP *= x.targetsPlayed / x.deckSize
     sumP += multipleP
   }
 
@@ -23,9 +24,8 @@ function calculate (x) {
   document.getElementById('calc').addEventListener('click', event => {
     const params = {
       upstart: document.getElementById('upstart').value === 'yes',
-      goingSecond: document.getElementById('second').value === 'yes',
-      numberOfCards: Number(document.getElementById('played').value),
-      cardsToDraw: 5,
+      cardsDrawn: Number(document.getElementById('draws').value),
+      targetsPlayed: Number(document.getElementById('played').value),
       deckSize: Number(document.getElementById('deck').value)
     }
 
