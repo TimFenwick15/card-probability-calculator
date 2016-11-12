@@ -18,7 +18,7 @@ function calculateSingleProbability (x) {
     sumP += multipleP
   }
 
-  return Math.round(sumP * 10000) / 100
+  return sumP
 }
 
 

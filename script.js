@@ -12,7 +12,7 @@ function resolve(x) {
   if (err.size)
     return [...err.values()]
 
-  return calculateMultipleProbability(x) + '%'
+  return (Math.round(calculateMultipleProbability(x) * 10000) /100) + '%'
 }
 
 
@@ -28,7 +28,7 @@ function resolve(x) {
       deckSize: Number(document.getElementById('deck').value)
     }
 
-    document.getElementById('yugioh').textContent = resolve(params)
+    document.getElementById('display').textContent = resolve(params)
   })
 })()
 
