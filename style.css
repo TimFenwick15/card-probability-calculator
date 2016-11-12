@@ -1,34 +1,38 @@
 body {
-  font-family: sans-serif;
-  font-size: 2rem;
   height: 98%;
-  line-height: 1.4;
+  width: 50%;
   margin: auto;
-  width: 70%;
 }
 
 div {
   box-shadow: 10px 10px 5px #888888;
 }
 
-p {
+p, input {
   margin: 5px;
+  font-family: sans-serif;
+  font-size: 2rem;
+}
+
+p {
+  line-height: 75px;
+}
+
+input {
+  float: right;
+  line-height: 60px;
+  width: 20%;
 }
 
 #deck {
-  height: 20%;
   background-color: #123456;
 }
 #targets {
-  height: 20%;
   background-color: #654321;
 }
 #modifiers {
-  height: 20%;
-  background-color: #1a1a1a;
+  background-color: #1f6419;
 }
-
 #results {
-  height: 20%;
   background-color: #666666;
 }
