@@ -25,10 +25,12 @@ function resolve(x) {
       */
       cardsDrawn: Number(document.getElementById('draws').value),
       targetsPlayed: Number(document.getElementById('played').value),
-      deckSize: Number(document.getElementById('deck').value)
+      deckSize: Number(document.getElementById('deckSize').value)
     }
 
-    document.getElementById('display').textContent = resolve(params)
+    document.getElementById('results')
+      .getElementsByTagName('p')[0]
+      .textContent = resolve(params)
   })
 })()
 

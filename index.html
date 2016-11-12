@@ -4,20 +4,40 @@
   <link rel='stylesheet' href='style.css' />
 </head>
 <body>
-<p>Deck Size : <input id='deck' value='40' type='number' /></p>
-<p>Number of Targets Played : <input id='played' value='' type='number' /></p>
-<p>Number of Cards Drawn : <input id='draws' value='' type='number' /></p>
-<!-- Will be added later
-<p>Playing Upstart? : 
-  <select id='upstart'>
-    <option value=''>Select</option>
-    <option value='yes'>Yes</option>
-    <option value='no'>No</option>
-  </select>
-</p> -->
+<div id='deck'>
+  <p>Deck Size : <input id='deckSize' value='40' type='number' /></p>
+  <p>Number of Cards Drawn : <input id='draws' value='' type='number' /></p>
+</div>
 
-<button id='calc'>Calculate...</button>
-<div id='display'></div>
+<div id='targets'>
+  <p>Number of Targets Played : <input id='played' value='' type='number' /></p>
+</div>
+
+<div id='modifiers'>
+  <p>
+    Coming Soon...
+  </p>
+  <!-- Will be added later
+  <p>Playing Upstart? : 
+    <select id='upstart'>
+      <option value=''>Select</option>
+      <option value='yes'>Yes</option>
+      <option value='no'>No</option>
+    </select>
+  </p> -->
+</div>
+
+<button id='calc'>
+  <p>
+    Calculate...
+  </p>
+</button>
+
+<div id='results'>
+  <p>
+    Results...
+  </p>
+</div>
 <script src='script.js'></script>
 <script src='maths.js'></script>
 </body>
