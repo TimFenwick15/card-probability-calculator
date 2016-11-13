@@ -4,8 +4,12 @@ body {
   margin: auto;
 }
 
-div {
+div:not(#targetP) {
   box-shadow: 10px 10px 5px #888888;
+}
+
+div {
+  overflow: auto;
 }
 
 p, input {
@@ -18,6 +22,10 @@ p {
   line-height: 75px;
 }
 
+button {
+  display: block;
+  margin: auto;
+}
 input {
   float: right;
   line-height: 60px;
