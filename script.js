@@ -2,25 +2,20 @@
  * Write any results requested
  */
 function resolve(x) {
-  
-  // this logic needs fixing.
-  // x won't be an array, just targetsPlayed will be an array.
-  // Every other property is the same for each run
-  // This needs fixing in maths.js too because currently loops over x.length
-  
-  if (x.constructor !== Array)
-    x = [x]
+  //let err = new Set
+  // check this
+  //const targets = x.targetsPlayed.reduce((total, num) => total + num)
 
-  let err = new Set
-  x.forEach(_ => {
-    if (!_.deckSize || /*!_.targetsPlayed ||*/ !_.cardsDrawn)
+  /*x.forEach(_ => {
+    if (!_.deckSize || !_.targetsPlayed || !_.cardsDrawn)
       err.add('Complete the form :(')
-    if (/*_.targetsPlayed > _.deckSize ||*/ _.cardsDrawn > _.deckSize)
+    if (_.targetsPlayed > _.deckSize || _.cardsDrawn > _.deckSize)
       err.add('Logical fallacy detected. Git gud')
   })
   if (err.size)
-    return [...err.values()]
-
+    return [...err.values()]*/
+  if (x.targetsPlayed.constructor !== Array)
+    x.targetsPlayed = [x.targetsPlayed]
   return (Math.round(calculateMultipleProbability(x) * 10000) /100) + '%'
 }
 

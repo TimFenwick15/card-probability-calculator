@@ -25,8 +25,12 @@ function calculateSingleProbability (x) {
 
 function calculateMultipleProbability (x) {
   let P = 1
-  for (let i = 0; i < x.length; i++)
-    P *= calculateSingleProbability(x[i])
-
-  return factorial(x.length) * P
+  for (let i = 0; i < x.targetsPlayed.length; i++) {
+    P *= calculateSingleProbability({
+      cardsDrawn: x.cardsDrawn,
+      deckSize: x.deckSize,
+      targetsPlayed: x.targetsPlayed[i]
+    })
+  }
+  return factorial(x.targetsPlayed.length) * P
 }
