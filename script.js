@@ -1,21 +1,22 @@
+'use strict'
+
 /*
  * Write any results requested
  */
 function resolve(x) {
-  //let err = new Set
-  // check this
-  //const targets = x.targetsPlayed.reduce((total, num) => total + num)
-
-  /*x.forEach(_ => {
-    if (!_.deckSize || !_.targetsPlayed || !_.cardsDrawn)
-      err.add('Complete the form :(')
-    if (_.targetsPlayed > _.deckSize || _.cardsDrawn > _.deckSize)
-      err.add('Logical fallacy detected. Git gud')
-  })
-  if (err.size)
-    return [...err.values()]*/
+  // Handle errors
   if (x.targetsPlayed.constructor !== Array)
     x.targetsPlayed = [x.targetsPlayed]
+  const targets = x.targetsPlayed.reduce((total, num) => total + num)
+  x.targetsPlayed = x.targetsPlayed.filter(_ => !!_)
+  let err = ''
+  if (!x.deckSize || !x.cardsDrawn || !x.targetsPlayed.length)
+    err += 'Complete the form :('
+  if (targets + x.cardsDrawn > x.deckSize)
+    err += (err !== '' ? '<br>' : '') + 'Logical fallacy detected. Git gud'
+  if (err.length)
+    return err
+
   return (Math.round(calculateMultipleProbability(x) * 10000) /100) + '%'
 }
 
@@ -35,7 +36,7 @@ function resolve(x) {
 
     document.getElementById('results')
       .getElementsByTagName('p')[0]
-      .textContent = resolve(params)
+      .innerHTML = resolve(params)
   })
 
   // Handle the add new target button
