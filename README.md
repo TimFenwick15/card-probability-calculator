@@ -7,3 +7,5 @@ Coming soon: Calculating the probability of drawing combinations of cards. For e
 In the future, the goal is to have a GUI that lets you build a process for calculating useful probabilities involved in CCG deck construction.
 
 There will be presets based on the game you play that include the ability to add common cards that increase or decrease your odds of seeing particular combinations of cards.
+
+https://timfenwick15.github.io/card-probability-calculator/
