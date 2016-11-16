@@ -1,13 +1,5 @@
 'use strict'
 
-function factorial (x) {
-  if (x === 0)
-    return 1
-  return x * factorial (x - 1)
-}
-
-
-
 function calculateSingleProbability (x) {
   let sumP = 0
   for (let i = 0; i < x.cardsDrawn; i++) {
@@ -19,7 +11,6 @@ function calculateSingleProbability (x) {
     multipleP *= x.targetsPlayed / x.deckSize
     sumP += multipleP
   }
-
   return sumP
 }
 
@@ -34,5 +25,12 @@ function calculateMultipleProbability (x) {
       targetsPlayed: x.targetsPlayed[i]
     })
   }
-  return factorial(x.targetsPlayed.length) * P
+  return P
+}
+
+
+
+function modifiers(x) {
+  x.deckSize -= x.upstart
+  return calculateMultipleProbability(x)
 }

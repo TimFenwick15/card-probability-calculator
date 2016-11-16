@@ -4,12 +4,9 @@ body {
   margin: auto;
 }
 
-div:not(#targetP) {
-  box-shadow: 10px 10px 5px #888888;
-}
-
 div {
   overflow: auto;
+  margin: 10px 0 10px 0;
 }
 
 p, input {
@@ -33,14 +30,14 @@ input {
 }
 
 #deck {
-  background-color: #123456;
+  background-color: #581845;
 }
 #targets {
-  background-color: #654321;
+  background-color: #900C3F;
 }
 #modifiers {
-  background-color: #1f6419;
+  background-color: #C70039;
 }
 #results {
-  background-color: #666666;
+  background-color: #FF5733;
 }

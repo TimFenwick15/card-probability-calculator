@@ -17,7 +17,12 @@ function resolve(x) {
   if (err.length)
     return err
 
-  return (Math.round(calculateMultipleProbability(x) * 10000) /100) + '%'
+  // temp initial modifiers code
+  x.upstart = Number(document.getElementById('upstart').value)
+  x.desires = Number(document.getElementById('desires').value)
+  
+  return (Math.round(calculateMultipleProbability(x) * 10000) / 100) + '%' +
+    '<br>With modifiers :' + (Math.round(modifiers(x) * 10000) / 100) + '%'
 }
 
 
