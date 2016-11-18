@@ -36,7 +36,7 @@ function modifiers(x) {
   const pDrawDesires = calculateSingleProbability({
     cardsDrawn: x.cardsDrawn,
     deckSize: x.deckSize,
-    targetsPlayed: 3
+    targetsPlayed: x.desires
   })
  
   const pDrawTarget = calculateMultipleProbability(x)
@@ -47,20 +47,17 @@ function modifiers(x) {
     targetsPlayed: x.targetsPlayed
   })
 
-  console.log(x.targetsPlayed, Array(x.targetsPlayed[0]).fill(1))
-
   const pKill = calculateMultipleProbability({
     cardsDrawn: 10,
     deckSize: x.deckSize - x.cardsDrawn,
     targetsPlayed: Array(x.targetsPlayed[0]).fill(1)
   })
 
-  console.log({pDrawDesires, pDrawTarget, pDrawTargetPlus2, pKill})
-
-  return pDrawTarget +
-    pDrawDesires * pDrawTargetPlus2 -
+  return (
+    pDrawTarget +
+    (1 - pDrawTarget) * pDrawDesires * pDrawTargetPlus2 -
     pKill
-
+  )
 }
 
 /*
