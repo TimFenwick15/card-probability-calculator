@@ -1,0 +1,22 @@
+{
+  "name": "card-probability-calculator",
+  "version": "1.0.0",
+  "description": "This is a probability calculator for Collectable Card Games.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TimFenwick15/card-probability-calculator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TimFenwick15/card-probability-calculator/issues"
+  },
+  "homepage": "https://github.com/TimFenwick15/card-probability-calculator#readme"
+}

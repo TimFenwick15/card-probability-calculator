@@ -1,5 +1,33 @@
 'use strict'
 
+const Deck = size => {
+
+  const draw = () => size--;
+
+  return {
+    size,
+    draw
+
+  };
+}
+
+/*const ProbabilityMaths = () => {
+  return {
+    count: deck => deck.size
+  }; 
+}*/
+const ProbabilityMaths = {}
+ProbabilityMaths.count = deck => deck.size;
+
+const d = Deck(40);
+
+console.log( ProbabilityMaths.count(d) );
+// js objects - these guys only need to be functions if I want a constructor
+// probability maths can probably just be a namespace; deck will need a constructor so make it a function
+
+
+
+
 function calculateSingleProbability(x) {
   let multipleP
   let sumP = 0
